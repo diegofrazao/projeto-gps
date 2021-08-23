@@ -4,10 +4,13 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from "@angular/router";
+import { TermoDeUsoComponent } from './termo-de-uso/termo-de-uso.component';
 
 @NgModule({
     declarations: [
-        MainFooterComponent
+        MainFooterComponent,
+        TermoDeUsoComponent
     ],
     exports: [
         MainFooterComponent
@@ -16,7 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         CommonModule,
         MatButtonModule,
         MatIconModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        RouterModule
     ]
 })
 export class FooterModule { }
