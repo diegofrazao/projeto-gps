@@ -25,28 +25,24 @@ export class CardProdutoComponent implements OnInit {
   }
 
   inserirNoCart(produto: Produto): void {
-    this.itemService.inserir(new Item(produto.id.toString(), 1, produto)).subscribe(
-      produt => console.log('Inserido')
-    );
     /*this.itemService.pesquisarPorProduto(produto).subscribe(
-      (data) => {
-        if (data[0] !== undefined){
-          data.map(e => {
-            const id = e.payload.doc.id;
-            console.log('Tá na lista: ', id);
-            this.itemService.pesquisarPorId(id).subscribe(
-              item => {
-                this.itemService.atualizar(item, new Item(item.id, item.qnt + 1, item.produto));
-              }
-            );
-          });
+      item =>
+      {
+        if (item.length !== 0){
+          console.log('Atualizando...');
+          this.itemService.atualizar(item[0], new Item(item[0].produto.id.toString(), item[0].qnt + 1, item[0].produto)).subscribe(
+            i => console.log('updated')
+          );
         }
         else{
           this.itemService.inserir(new Item(produto.id.toString(), 1, produto)).subscribe(
-            produt => console.log('Inserido')
+            produt => console.log('inserido')
           );
         }
       }
     );*/
+    this.itemService.inserir(new Item(produto.id.toString(), 1, produto)).subscribe(
+      produt => console.log('inserido')
+    );
   }
 }
